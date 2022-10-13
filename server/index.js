@@ -14,8 +14,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // ROUTES
-const userRoute = require("./routes/userRoute");
-app.use("/user", userRoute);
+const routes = require("./routes/indexRoute");
+app.use("/api", routes);
 
 app.get("/", (req, res) => {
   res.status(200).json({ message: "Hello world" });
