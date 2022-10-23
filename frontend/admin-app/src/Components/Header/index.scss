@@ -1,0 +1,88 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.navbarHeader {
+  &__dashboard {
+    color: white;
+  }
+  &__link {
+    margin: 0 2rem;
+    color: rgb(84, 107, 185);
+    &:hover {
+      color: white;
+      transform: scale(1.2);
+      transition: 0.3s;
+    }
+  }
+}
+.active {
+  color: white
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  padding: 0 2rem;
+  background-color: #202124;
+  color: white;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+}
+
+header .nav-btn {
+  padding: 5px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  visibility: hidden;
+  opacity: 0;
+  font-size: 1.8rem;
+  display: none;
+}
+
+@media only screen and (max-width: 720px) {
+  header .nav-btn {
+    visibility: visible;
+    opacity: 1;
+    display: block;
+  }
+
+  header nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    background-color: #202124;
+    transition: 0.5s;
+    transform: translateY(-100vh);
+  }
+
+  header .responsive_nav {
+    transform: none;
+  }
+
+  nav .nav-close-btn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+  }
+  nav a {
+    font-size: 1.5 rem;
+  }
+}

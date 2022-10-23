@@ -1,0 +1,18 @@
+.UI_Button {
+  &__container {
+    flex: 1;
+  }
+  &__button {
+    margin: 8px;
+    padding: 8px 6px;
+    border-radius: 16px;
+    border: 1px solid #eee;
+    color: white;
+    font-weight: 400;
+    background-color: rgb(78, 78, 255);
+    &:hover {
+      cursor: pointer;
+      background-color: rgb(32, 36, 244);
+    }
+  }
+}

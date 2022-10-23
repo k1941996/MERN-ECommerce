@@ -1,0 +1,22 @@
+.signInContainer {
+  &__upperContainer {
+    display: flex;
+    justify-content: center;
+    margin: 64px 0;
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+  }
+  &__row {
+    display: flex;
+  }
+  &__submitContainer {
+    display: flex;
+    flex: 1;
+  }
+  &__submit-button {
+    flex: 1;
+  }
+}

@@ -1,0 +1,12 @@
+.footer-component {
+  &__container {
+    display: flex;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    background-color: #202124;
+  }
+  &__row {
+    color: white;
+  }
+}
