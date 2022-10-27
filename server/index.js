@@ -1,7 +1,6 @@
-const express = require("express");
-const env = require("dotenv");
-const database = require("./database/initDb");
-
+const express = require('express');
+const env = require('dotenv');
+const database = require('./database/initDb');
 
 const app = express();
 env.config();
@@ -14,11 +13,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // ROUTES
-const routes = require("./routes/indexRoute");
-app.use("/api", routes);
+const routes = require('./routes/indexRoute');
+app.use('/api', routes);
 
-app.get("/", (req, res) => {
-  res.status(200).json({ message: "Hello world" });
+app.get('/', (req, res) => {
+  res.status(200).json({ message: 'Hello world' });
 });
 
 app.listen(PORT, () => {

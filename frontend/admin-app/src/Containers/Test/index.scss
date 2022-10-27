@@ -1,0 +1,10 @@
+.container__test {
+  &__image {
+    &-container {
+      display: flex;
+    }
+    &-div {
+      width: 200px;
+    }
+  }
+}

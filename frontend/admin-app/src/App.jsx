@@ -4,7 +4,7 @@ import Home from './Containers/Home';
 import SignUp from './Containers/SignUp';
 import SignIn from './Containers/SignIn';
 import HeaderFooter from './Components/Layout';
-
+import Test from './Containers/Test';
 const App = () => {
   return (
     <Router>
@@ -13,6 +13,7 @@ const App = () => {
           <Route index exact={true} element={<Home />} />
           <Route path="signup" element={<SignUp />} />
           <Route path="signin" element={<SignIn />} />
+          <Route path="test" element={<Test />} />
         </Route>
       </Routes>
     </Router>

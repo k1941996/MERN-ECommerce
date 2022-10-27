@@ -1,5 +1,5 @@
-const User = require("../../models/userModel");
-const jwt = require("jsonwebtoken");
+const User = require('../../models/userModel');
+const jwt = require('jsonwebtoken');
 
 const signUp = (req, res) => {
   const { firstName, username, lastName, password, email, contactNo } = req.body;
@@ -15,7 +15,7 @@ const signUp = (req, res) => {
     .save()
     .then((data) => {
       if (data) {
-        res.status(200).json({ message: "User Successfully Created" });
+        res.status(200).json({ message: 'User Successfully Created' });
       }
     })
     .catch((error) => {
@@ -23,7 +23,7 @@ const signUp = (req, res) => {
         .map((f) => {
           return `${f} ${error.keyValue[f]}`;
         })
-        .join(",");
+        .join(',');
       return res.status(400).json({ error: `${userDetails} already exists` });
     });
 };
@@ -36,7 +36,7 @@ const signIn = (req, res) => {
     .then((user) => {
       if (user) {
         if (user.authenticate(password)) {
-          var token = jwt.sign({ _id: user._id }, secret, { expiresIn: "1h" });
+          var token = jwt.sign({ _id: user._id }, secret, { expiresIn: '1h' });
           const { firstName, lastName, fullName, email, role, _id } = user;
           res.status(200).json({
             token,
@@ -51,7 +51,7 @@ const signIn = (req, res) => {
           });
         }
       } else {
-        res.status(400).json({ error: "Invalid credentials" });
+        res.status(400).json({ error: 'Invalid credentials' });
       }
     })
     .catch((err) => {
@@ -61,17 +61,14 @@ const signIn = (req, res) => {
 
 const requireSignIn = (req, res, next) => {
   const authToken = req.headers.authorization;
-  const token = authToken.split(" ")[1];
+  const token = authToken.split(' ')[1];
   const secret = process.env.JWT_SECRET_KEY;
   jwt.verify(token, secret, (err, decoded) => {
-    if(err){
-      return res.status(401).json({message:"Not Authorized",err})
-    }
-    else {
+    if (err) {
+      return res.status(401).json({ message: 'Not Authorized', err });
+    } else {
       next();
     }
-  
-    
   });
 
   // jwt.decode()
